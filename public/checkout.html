@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <header class="bg-dark text-white p-3">
+      <h1 class="text-center">Checkout</h1>
+      <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="auth.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="cart.html">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="profile.html">Profile</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container mt-4">
+      <section id="checkout-section">
+        <h2>Your Cart Items</h2>
+        <ul class="cart-items list-group"></ul>
+        <p>Total: <span id="checkout-total-price">$0.00</span></p>
+        <form id="checkout-form" class="form-group">
+          <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">Shipping Address:</label>
+            <textarea
+              id="address"
+              name="address"
+              class="form-control"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="payment-method">Payment Method:</label>
+            <select
+              id="payment-method"
+              name="payment-method"
+              class="form-control"
+            >
+              <option value="credit-card">Credit/Debit Card</option>
+              <option value="paypal">PayPal</option>
+              <option value="cash-on-delivery">Cash on Delivery</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3">
+      &copy; 2023 Eco-Friendly Store
+    </footer>
+
+    <script type="module" src="assets/js/checkout.js"></script>
+  </body>
+</html>

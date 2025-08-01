@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <header class="bg-dark text-white p-3">
+      <h1 class="text-center">Orders</h1>
+      <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="auth.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="cart.html">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="profile.html">Profile</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container mt-4">
+      <section id="orders-section">
+        <h2>All Orders</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Update Status</th>
+              <th>Order Items</th>
+            </tr>
+          </thead>
+          <tbody id="order-list"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3">
+      &copy; 2023 Eco-Friendly Store
+    </footer>
+
+    <script type="module" src="assets/js/orders.js"></script>
+  </body>
+</html>

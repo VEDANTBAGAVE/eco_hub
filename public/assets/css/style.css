@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Light background color */
+}
+
+header {
+  background-color: #343a40; /* Darker header */
+  color: white; /* White text color */
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white; /* White text for nav links */
+}
+
+main {
+  padding: 20px;
+}
+
+#search {
+  margin-bottom: 20px;
+}
+
+#search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+#filters {
+  margin-bottom: 20px;
+}
+
+#filters label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#filters input[type="number"] {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product {
+  width: calc(33% - 20px); /* Three products per row */
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: white; /* White background for products */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 5px; /* Rounded image corners */
+}
+
+.product-name {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.product-price {
+  color: #007bff; /* Bootstrap primary color */
+}
+
+#checkout {
+  margin-top: 20px;
+}
+
+#checkout-form {
+  margin-bottom: 20px;
+}
+
+#checkout-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#checkout-form input,
+#checkout-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded input fields */
+}
+
+#checkout-form button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#checkout-form button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+footer {
+  background-color: #343a40; /* Dark footer */
+  color: white; /* White text for footer */
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .product {
+    width: calc(50% - 20px); /* Two products per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+    width: 100%; /* One product per row on very small screens */
+  }
+}

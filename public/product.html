@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Friendly E-commerce</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-DyZv8pPpXcfB/1DZRqL1VQItgmgYJ6t5jAL9J7eJXx1A6qYUmQj+V1A9LBB3y+jR"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="bg-dark text-white p-3">
+      <h1 class="text-center">Product Details</h1>
+      <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="cart.html">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="checkout.html">Checkout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container mt-4">
+      <div class="product-details"></div>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3">
+      &copy; 2023 Eco-Friendly Store
+    </footer>
+
+    <!-- Firebase setup -->
+    <script type="module">
+      // Firebase SDK integration
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBzoFv_eiYF9MiwCwAKeFUZTwBnrPtxHHE",
+        authDomain: "eco-friendly-store.firebaseapp.com",
+        projectId: "eco-friendly-store",
+        storageBucket: "eco-friendly-store.appspot.com",
+        messagingSenderId: "809792193062",
+        appId: "1:809792193062:web:320478197ae3123b991ce7",
+        measurementId: "G-Z2QDL35KK2",
+      };
+
+      // Initialize Firebase and Firestore
+      const app = initializeApp(firebaseConfig);
+      window.db = getFirestore(app); // Make db accessible globally
+    </script>
+
+    <!-- Link to external JS file -->
+    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="../js/product.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-ZVP8YI3gp/hs4hT6D/WPpIi02Nj0U4AsV5x3H/OmlJc2qSwwSTLWyG6LkmF0m7Ql"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgG6aF1F7tQQhE+gFqVoNf4NYXYbQbspzL5ndUmzGVhQ9z2U/+0"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

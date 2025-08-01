@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-Friendly E-commerce</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Bootstrap's JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Firebase libraries with type="module" -->
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js"
+    ></script>
+  </head>
+  <body>
+    <header class="bg-dark text-white p-3">
+      <h1 class="text-center">Eco-Friendly Store</h1>
+      <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="auth.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="cart.html">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="profile.html">Profile</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container mt-4">
+      <h2>Our Products</h2>
+      <div class="row product-list"></div>
+      <!-- Product listing will be populated dynamically -->
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3">
+      &copy; 2023 Eco-Friendly Store
+    </footer>
+
+    <!-- Firebase setup -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+      import {
+        getStorage,
+        ref,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBzoFv_eiYF9MiwCwAKeFUZTwBnrPtxHHE",
+        authDomain: "eco-friendly-store.firebaseapp.com",
+        projectId: "eco-friendly-store",
+        storageBucket: "eco-friendly-store.appspot.com",
+        messagingSenderId: "809792193062",
+        appId: "1:809792193062:web:320478197ae3123b991ce7",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const storage = getStorage(app);
+
+      // Populate products
+      async function loadProducts() {
+        const productsCollection = collection(db, "products");
+        const querySnapshot = await getDocs(productsCollection);
+        const productList = document.querySelector(".product-list");
+
+        querySnapshot.forEach(async (doc) => {
+          const product = doc.data();
+          const productCard = document.createElement("div");
+          productCard.classList.add("col-md-4", "mb-4");
+
+          // Construct image URL
+          const imageRef = ref(storage, `images/${product.image}`);
+          const imageUrl = await getDownloadURL(imageRef); // Get the download URL
+
+          productCard.innerHTML = `
+                    <div class="card">
+                        <img src="${imageUrl}" class="card-img-top" alt="${
+            product.name
+          }">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text">$${product.price.toFixed(
+                              2
+                            )}</p>
+                            <a href="product-details.html?productId=${
+                              doc.id
+                            }" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                `;
+          productList.appendChild(productCard);
+        });
+      }
+
+      loadProducts();
+    </script>
+  </body>
+</html>

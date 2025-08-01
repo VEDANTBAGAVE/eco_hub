@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "category": "ecofriendly_utensils",
+    "name": "Bamboo Toothbrush",
+    "price": 10,
+    "image": "/images/bamboo_toothbrush.jpeg",
+    "description": "A sustainable alternative to plastic toothbrushes, made from biodegradable bamboo.",
+    "stock": 100
+  },
+  {
+    "id": 2,
+    "category": "ecofriendly_utensils",
+    "name": "Reusable Stainless Steel Straws",
+    "price": 8,
+    "image": "/images/stainless_steel_straws.jpg",
+    "description": "A set of reusable stainless steel straws to replace single-use plastic straws.",
+    "stock": 50
+  },
+  {
+    "id": 3,
+    "category": "ecofriendly_wareables",
+    "name": "Organic Cotton T-Shirt",
+    "price": 25,
+    "image": "/images/organic_cotton_t-shirt.jpeg",
+    "description": "A soft and comfortable t-shirt made from organic cotton.",
+    "stock": 200
+  },
+  {
+    "id": 4,
+    "category": "ecofriendly_wareables",
+    "name": "Hemp Tote Bag",
+    "price": 15,
+    "image": "/images/hemp_tote_bag.jpg",
+    "description": "A durable and stylish tote bag made from hemp.",
+    "stock": 150
+  },
+  {
+    "id": 5,
+    "category": "eco_friendly_household",
+    "name": "Reusable Coffee Filter",
+    "price": 12,
+    "image": "/images/reusable_coffee_filter.jpeg",
+    "description": "A reusable coffee filter made from natural materials.",
+    "stock": 80
+  },
+  {
+    "id": 6,
+    "category": "eco_friendly_household",
+    "name": "Bamboo Cutting Board",
+    "price": 20,
+    "image": "/images/bamboo_cutting_board.jpeg",
+    "description": "A durable and eco-friendly cutting board made from bamboo.",
+    "stock": 120
+  },
+  {
+    "id": 7,
+    "category": "health_products",
+    "name": "Organic Coconut Oil",
+    "price": 18,
+    "image": "/images/organic_coconut_oil.jpeg",
+    "description": "A natural and versatile organic coconut oil for various uses.",
+    "stock": 300
+  },
+  {
+    "id": 8,
+    "category": "health_products",
+    "name": "Natural Herbal Tea",
+    "price": 7,
+    "image": "/images/natural_herbal_tea.jpeg",
+    "description": "A soothing and flavorful herbal tea blend.",
+    "stock": 250
+  }
+]

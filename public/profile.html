@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>User Profile</h2>
+      <div id="user-info"></div>
+
+      <h3>Your Orders</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Order Total</th>
+            <th>Status</th>
+            <th>Products</th>
+          </tr>
+        </thead>
+        <tbody id="order-list"></tbody>
+      </table>
+      <h3>Profile Photo</h3>
+      <img
+        id="profile-photo"
+        src=""
+        alt="Profile Photo"
+        style="width: 150px; height: auto"
+      />
+      <input type="file" id="photo-input" accept="image/*" />
+      <button id="logout-button" class="btn btn-danger">Logout</button>
+    </div>
+
+    <script type="module" src="assets/js/profile.js"></script>
+  </body>
+</html>

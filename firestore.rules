@@ -1,0 +1,20 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read access to the 'products' collection for all users
+    match /products/{document=**} {
+      allow read: if true; // Allow read access for all
+    }
+    
+    // Allow read and write access to the 'orders' collection for all users
+    match /orders/{document=**} {
+      allow read, write: if true; // Allow all access temporarily for testing
+    }
+    
+    // Users can only read and write their own user document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
